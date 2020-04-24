@@ -1,7 +1,7 @@
+import './preview_screen.dart';
 import 'package:path/path.dart';
 import 'package:camera/camera.dart'; //needed to access the dart camera package
 import 'package:flutter/material.dart';
-import '../previewscreen/preview_screen.dart';
 import 'package:path_provider/path_provider.dart';
 
 class CameraScreen extends StatefulWidget {
@@ -18,21 +18,22 @@ class _CameraScreenState extends State {
   int selectedCameraIdx; // keeping track of the slected camera
   String imagePath; // holding the path to the image in phone
 
-  @override //overiding the initial state 
+  @override //overiding the initial state
   void initState() {
     super.initState();
     availableCameras().then((availableCameras) {
+      cameras =
+          availableCameras; // method from camera plugin returning  a list o of available cameras
 
-      cameras = availableCameras; // method from camera plugin returning  a list o of available cameras
-
-    //checking to see if the device has cameras available
+      //checking to see if the device has cameras available
       if (cameras.length > 0) {
         setState(() {
-          selectedCameraIdx = 0; // if cameras are available initial camera is the back
+          selectedCameraIdx =
+              0; // if cameras are available initial camera is the back
         });
 
         _initCameraController(cameras[selectedCameraIdx]).then((void v) {});
-      }else{
+      } else {
         print("No camera available");
       }
     }).catchError((err) {
@@ -116,9 +117,9 @@ class _CameraScreenState extends State {
     }
 
     return AspectRatio(
-        aspectRatio: controller.value.aspectRatio,
-        child: CameraPreview(controller),
-      );
+      aspectRatio: controller.value.aspectRatio,
+      child: CameraPreview(controller),
+    );
   }
 
   /// Display the control bar with buttons to take pictures
@@ -178,7 +179,7 @@ class _CameraScreenState extends State {
 
   void _onSwitchCamera() {
     selectedCameraIdx =
-    selectedCameraIdx < cameras.length - 1 ? selectedCameraIdx + 1 : 0;
+        selectedCameraIdx < cameras.length - 1 ? selectedCameraIdx + 1 : 0;
     CameraDescription selectedCamera = cameras[selectedCameraIdx];
     _initCameraController(selectedCamera);
   }
