@@ -1,8 +1,8 @@
-import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
 import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:camera/camera.dart'; //needed to access the dart camera package
+import 'package:flutter/material.dart';
 import '../previewscreen/preview_screen.dart';
+import 'package:path_provider/path_provider.dart';
 
 class CameraScreen extends StatefulWidget {
   @override
@@ -12,21 +12,23 @@ class CameraScreen extends StatefulWidget {
 }
 
 class _CameraScreenState extends State {
-  CameraController controller;
-  List cameras;
-  int selectedCameraIdx;
-  String imagePath;
+  //initializing the state
+  CameraController controller; //establishing connection to device camera
+  List cameras; //list of available cameras, back or front
+  int selectedCameraIdx; // keeping track of the slected camera
+  String imagePath; // holding the path to the image in phone
 
-  @override
+  @override //overiding the initial state 
   void initState() {
     super.initState();
     availableCameras().then((availableCameras) {
 
-      cameras = availableCameras;
+      cameras = availableCameras; // method from camera plugin returning  a list o of available cameras
 
+    //checking to see if the device has cameras available
       if (cameras.length > 0) {
         setState(() {
-          selectedCameraIdx = 0;
+          selectedCameraIdx = 0; // if cameras are available initial camera is the back
         });
 
         _initCameraController(cameras[selectedCameraIdx]).then((void v) {});

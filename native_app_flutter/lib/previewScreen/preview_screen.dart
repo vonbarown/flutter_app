@@ -18,21 +18,21 @@ class _PreviewImageScreenState extends State<PreviewImageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Preview'),
-        backgroundColor: Colors.blueGrey,
+        title: Text('Preview Image'),
+        backgroundColor: Colors.teal ,
       ),
       body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
-                flex: 2,
+                flex: 9,
                 child: Image.file(File(widget.imagePath), fit: BoxFit.cover)),
-            SizedBox(height: 10.0),
+            SizedBox(height: 1.0),
             Flexible(
               flex: 1,
               child: Container(
-                padding: EdgeInsets.all(60.0),
+                padding: EdgeInsets.all(5.0),
                 child: RaisedButton(
                   onPressed: () {
                     getBytesFromFile().then((bytes) {
