@@ -73,7 +73,7 @@ class _CameraScreenState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Click To Share'),
+        title: const Text('Snap a Pic'),
         backgroundColor: Colors.blueGrey,
       ),
       body: Container(
@@ -85,7 +85,7 @@ class _CameraScreenState extends State {
                 flex: 1,
                 child: _cameraPreviewWidget(),
               ),
-              SizedBox(height: 10.0),
+              SizedBox(height: 1.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -132,7 +132,7 @@ class _CameraScreenState extends State {
           children: [
             FloatingActionButton(
                 child: Icon(Icons.camera),
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.teal,
                 onPressed: () {
                   _onCapturePressed(context);
                 })

@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'dart:typed_data';
-import 'package:esys_flutter_share/esys_flutter_share.dart';
-import 'package:flutter/material.dart';
 import 'package:path/path.dart';
+import 'package:flutter/material.dart';
+import 'package:esys_flutter_share/esys_flutter_share.dart';
 
 class PreviewImageScreen extends StatefulWidget {
   final String imagePath;

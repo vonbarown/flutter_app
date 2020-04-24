@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'camerascreen/camera_screen.dart';
+import './homePage/home_page.dart';
 
 class CameraApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CameraScreen(),
+      home:  MyHomePage(title: 'Flutter Home Page'),
     );
   }
 }
