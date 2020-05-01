@@ -15,7 +15,7 @@ class RouteGenerator {
         );
       // }
       // return _errorRoute();
-      case '/second':
+      case '/camera':
         return MaterialPageRoute(builder: (_) => CameraScreen());
       default:
         // If there is no such named route in the switch statement, e.g. /third
