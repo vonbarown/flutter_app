@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 // import './pages/home_page.dart';
 // import './camera/camera_screen.dart';
 
-class CameraApp extends StatelessWidget {
+class Synergie extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<User>.value(
@@ -21,4 +21,4 @@ class CameraApp extends StatelessWidget {
   }
 }
 
-void main() => runApp(CameraApp());
+void main() => runApp(Synergie());
