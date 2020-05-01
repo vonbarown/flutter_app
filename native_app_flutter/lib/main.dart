@@ -11,17 +11,6 @@ class CameraApp extends StatelessWidget {
       home: Wrapper(),
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
-      // onGenerateRoute: (RouteSettings settings) {
-      //   // switch (settings.name) {
-      //   //   case '/':
-      //   //     return MaterialPageRoute(
-      //   //         builder: (context) => MyHomePage(title: 'Flutter Home Page'));
-      //   //     break;
-      //   //   case '/second':
-      //   //     return MaterialPageRoute(builder: (context) => CameraScreen());
-      //   //   default:
-      //   // }
-      // },
     );
   }
 }
