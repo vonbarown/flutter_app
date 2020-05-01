@@ -1,3 +1,4 @@
+import 'package:Native_App/screens/home/home.dart';
 import 'package:Native_App/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 import '../camera/camera_screen.dart';
@@ -15,6 +16,8 @@ class RouteGenerator {
         );
       // }
       // return _errorRoute();
+      case '/home':
+        return MaterialPageRoute(builder: (_) => Home());
       case '/camera':
         return MaterialPageRoute(builder: (_) => CameraScreen());
       default:
