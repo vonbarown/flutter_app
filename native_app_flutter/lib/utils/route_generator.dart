@@ -1,3 +1,4 @@
+import 'package:Native_App/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 import '../camera/camera_screen.dart';
 import '../pages/home_page.dart';
@@ -9,12 +10,12 @@ class RouteGenerator {
 
     switch (settings.name) {
       case '/':
-        if (args is String) {
-          return MaterialPageRoute(
-            builder: (_) => MyHomePage(title: 'Flutter Home Page'),
-          );
-        }
-        return _errorRoute();
+        // if (args is String) {
+        return MaterialPageRoute(
+          builder: (_) => Wrapper(),
+        );
+      // }
+      // return _errorRoute();
       case '/second':
         return MaterialPageRoute(builder: (_) => CameraScreen());
       default:
