@@ -16,21 +16,27 @@ class _WrapperState extends State<Wrapper> {
   bool onBoarding = true;
 
   void toggleOnBoarding() {
-    setState(() => onBoarding = false);
+    setState(() => onBoarding = !this.onBoarding);
   }
 
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
 
+    print('onboarding');
+    print(onBoarding);
     if (user == null) {
       return Authenticate();
+      // } else if (onBoarding && user != null) {
+      //   return OnboardingScreen(toggleOnBoarding: toggleOnBoarding);
     } else {
-      if (onBoarding) {
-        return OnboardingScreen(toggleOnBoarding: toggleOnBoarding);
-      } else {
-        return Home();
-      }
+      // return Home();
+      // if (this.onBoarding) {
+      //   return OnboardingScreen(toggleOnBoarding: toggleOnBoarding);
+      // } else {
+      return Home();
+      // }
+      // return OnboardingScreen();
     }
   }
 }

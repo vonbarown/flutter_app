@@ -63,7 +63,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Container(
                   alignment: Alignment.centerRight,
                   child: FlatButton(
-                    onPressed: () => print('Skip'),
+                    onPressed: () => {
+                      // rwidget.toggleOnBoarding(),
+                      Navigator.pushNamed(context, '/home')
+                    },
                     child: Text(
                       'Skip',
                       style: TextStyle(
@@ -218,7 +221,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               color: Colors.white,
               child: GestureDetector(
                 onTap: () => {
-                  widget.toggleOnBoarding(),
+                  // widget.toggleOnBoarding(),
                   Navigator.pushNamed(context, '/home')
                 },
                 child: Center(
