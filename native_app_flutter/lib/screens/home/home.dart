@@ -21,7 +21,12 @@ class Home extends StatelessWidget {
               label: Text('Logout'))
         ],
       ),
-      // body: Container(),
+      body: Center(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {Navigator.pushNamed(context, '/camera')},
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
